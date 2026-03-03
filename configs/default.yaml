@@ -1,0 +1,20 @@
+data:
+  kaggle_dataset: "siddharthkumarsah/plastic-bottles-image-dataset"
+  data_dir: "./data"
+  yaml_path: "./data/data.yaml"
+
+train:
+  model: "yolov8n.pt"
+  epochs: 50
+  batch: 16
+  imgsz: 640
+  device: null
+  project: "runs/train"
+  name: "plastic_bottle_detector"
+
+infer:
+  weights: "runs/train/plastic_bottle_detector/weights/best.pt"
+  conf: 0.5
+  source: "test_images"
+
+log_level: "INFO"
